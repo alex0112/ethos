@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+
+<h1> An amazing blog post.</h1>
+<h4> by Strong Bad </h4> 
+
+<div style="max-width: 1000px; ">
+    Since maybe like the Middle Ages, there have been many differing opinions about 
+
+
+hustle and bustle. This cannot be denied. It is my intention to sit down and play video 
+
+
+games for several hours.  
+	<br><br>
+
+    	
+First, moving around quickly, and with purpose, is a true sign of character. 
+
+
+Secondarily, bustle(e.g. hustle) yields more product for the working types. “Hustle and 
+
+
+bustle are like my right and left arms,” said Li’l Spicy in his famous “Hustle and Bustle 
+
+
+Are Like My Right and Left Arms” speech. Webster’s defines bustle as “excited and 
+
+
+often noisy activity; a stir.”  A stir, indeed. Finally, sometimes gross stuff can be funny.
+
+		<br><br>
+
+
+In conclusion, I, “The Yellow Dart,” think I have done a great job illustrating the 
+
+
+many differing opinions about hustle and bustle, may they both rest in peace. Also, I 
+
+
+		think Strong Bad should decrease The Cheat’s allowance.
+			<br><br>
+
+</div>
+
+
+
+<h1>Comments</h1>
+
+<% @comments.each do |comment| %>
+    <%= comment.user %>
+    <br>
+    <div style="height:100px; width:100%; background:#80808026; padding: 10px;">
+	<%= raw comment.content %>
+    </div>
+    <%= link_to 'Edit', edit_comment_path(comment) %>
+    <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <br>
+    <br>
+<% end %>
+<br>
+<br>
+<br>
+<br>
+
+<%= render 'form', comment: @comment %>
+<%#= link_to 'New Comment', new_comment_path %>
